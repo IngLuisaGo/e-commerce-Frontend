@@ -3,12 +3,20 @@ import { Navbar, Container, Nav, DropdownButton, Dropdown} from 'react-bootstrap
 import './navbar.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faRightFromBracket } from '@fortawesome/free-solid-svg-icons';
+import Cookies from 'universal-cookie/es6';
+
+const cookies = new Cookies();
 
 
 export default class menu extends React.Component {
     constructor(props) {
         super(props);
         this.state = {};
+    }
+
+    Logout(){
+        cookies.remove('_s');
+        window.location.reload();
     }
 
     render() {
@@ -29,7 +37,7 @@ export default class menu extends React.Component {
                                     <FontAwesomeIcon icon={faUserGear} /> Cerrar sesión</Dropdown.Item>
                             </Dropdown.Header> */}
                             <Dropdown.Header id="dropwown-header">
-                                <Dropdown.Item href="#/action-1">
+                                <Dropdown.Item onClick={() => this.Logout()}>
                                     <FontAwesomeIcon icon={faRightFromBracket} /> Cerrar sesión</Dropdown.Item>
                             </Dropdown.Header>
                             {/* <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
