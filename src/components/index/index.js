@@ -8,14 +8,31 @@ import item1 from '../../assets/Items/Items-1.jpeg';
 import Card from 'react-bootstrap/Card';
 import './index.css';
 import Button from 'react-bootstrap/Button';
+import CardsR from '../cards/cards'
 import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
+
+const columns = [{
+    dataField: '_id',
+    text: 'ID',
+    hidden: true,
+}, {
+    dataField: 'nombre',
+    text: 'Nombre'
+}, {
+    dataField: 'cantidad',
+    text: 'Cantidad'
+}, {
+    dataField: 'precio',
+    text: 'Precio'
+}];
+
 
 export default class inicio extends React.Component {
     constructor(props) {
         super(props);
         this.state = {};
     }
+
 
     render() {
         return (
@@ -56,63 +73,22 @@ export default class inicio extends React.Component {
                         </Carousel.Caption>
                     </Carousel.Item>
                 </Carousel>
-                <div className='subTitle ms-6 mt-5'><h4  style={{color: ' rgb(79 3 104)'}}>Descubre lo que la gente está comprando
+                <div className='subTitle ms-6 mt-5'><h4 style={{ color: ' rgb(79 3 104)' }}>Descubre lo que la gente está comprando
                 </h4>
-                    <h5 style={{color: 'rgb(102 2 135)'}}>Inspírate y se parte de Stylo Lenanie</h5>
+                    <h5 style={{ color: 'rgb(102 2 135)' }}>Inspírate y se parte de Stylo Lenanie</h5>
                 </div>
 
                 <div className='ms-5 me-5 mt-3'>
                     <Row className='ms-5 me-5'>
-                        <Col><Card className='max-card'>
-                            <Card.Img src={item1} alt="Card image" className='cardImage' />
-                            <Card.Body>
-                                <Card.Title>Hombre MC-79</Card.Title>
-                                <Card.Text>
-                                    Dr. Martens Bonny Chukka Boot
-                                    <p>Desde 1000$</p>
-                                </Card.Text>
-                                <Button variant="primary">Adquirir</Button>
-                            </Card.Body>
-                        </Card>
-                        </Col>
-                        <Col><Card className='max-card'>
-                            <Card.Img src={item1} alt="Card image" className='cardImage' />
-                            <Card.Body>
-                                <Card.Title>Card Title</Card.Title>
-                                <Card.Text>
-                                    Some quick example text to build on the card title and make up the
-                                    bulk of the card's content.
-                                </Card.Text>
-                                <Button variant="primary">Go somewhere</Button>
-                            </Card.Body>
-                        </Card>
-                        </Col>
-                        <Col><Card className='max-card'>
-                            <Card.Img src={item1} alt="Card image" className='cardImage' />
-                            <Card.Body>
-                                <Card.Title>Card Title</Card.Title>
-                                <Card.Text>
-                                    Some quick example text to build on the card title and make up the
-                                    bulk of the card's content.
-                                </Card.Text>
-                                <Button variant="primary">Go somewhere</Button>
-                            </Card.Body>
-                        </Card>
-                        </Col>
-                        <Col><Card className='max-card'>
-                            <Card.Img src={item1} alt="Card image" className='cardImage' />
-                            <Card.Body>
-                                <Card.Title>Card Title</Card.Title>
-                                <Card.Text>
-                                    Some quick example text to build on the card title and make up the
-                                    bulk of the card's content.
-                                </Card.Text>
-                                <Button variant="primary">Go somewhere</Button>
-                            </Card.Body>
-                        </Card></Col>
+                        <CardsR
+                            url="/productos"
+                            columns={columns}
+                            showEditButton={true}
+                            showDeleteButton={true}
+                            onClickEditButton={this.onClickEditButton}
+                            onClickDeleteButton={this.onClickDeleteButton}
+                        />
                     </Row>
-
-
                 </div>
             </div>
         );

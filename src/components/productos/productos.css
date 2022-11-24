@@ -18,11 +18,23 @@
 #productos-crear-container,
 #producto-buscar-container {
     margin-top: 50px;
-
+    margin-left: 4rem;
+    width: 90%;
 }
 
 #productos-crear-container .form-label{
     float: left;
     margin-bottom: 10px;
 
+}
+
+.active>.page-link, .page-link.active {
+    color: white !important;
+    background-color:#6c757d !important;
+    border-color:#565e64 !important;
+}
+
+.nav-tabs{
+    width: 91.6%;
+    margin-left: 3.2rem;
 }
