@@ -6,6 +6,7 @@ import { faRightFromBracket } from '@fortawesome/free-solid-svg-icons';
 import Cookies from 'universal-cookie/es6';
 
 const cookies = new Cookies();
+import Card from 'react-bootstrap/Card';
 
 
 export default class menu extends React.Component {

@@ -1,6 +1,5 @@
-#producto-buscar-container,
 #producto-container{
-    margin-top: 100px;
+    margin-top: 150px;
 }
 
 .react-bs-table-sizePerPage-dropdown .dropdown-toggle {
@@ -14,4 +13,16 @@
 }
 .sr-only{
     font-size: 0;
+}
+
+#productos-crear-container,
+#producto-buscar-container {
+    margin-top: 50px;
+
+}
+
+#productos-crear-container .form-label{
+    float: left;
+    margin-bottom: 10px;
+
 }

@@ -42,5 +42,33 @@ export const request = {
             });
 
     },
-};
 
+
+    post: function (services, data) {
+        let token = renovarSesion();
+        return axios.post(`${APIHOST}${services}`, data, {
+            headers: {
+                Authorization: `Bearer ${token}`,
+            },
+        });
+    },
+
+    put: function (services, data) {
+        let token = renovarSesion();
+        return axios.put(`${APIHOST}${services}`, data, {
+            headers: {
+                Authorization: `Bearer ${token}`,
+            },
+
+        });
+    },
+
+    delete:function(services){
+        let token = renovarSesion();
+        return axios.delete(`${APIHOST}${services}`,{
+            headers:{
+                Authorization: `Bearer ${token}`,
+            },
+        });
+    },
+};
