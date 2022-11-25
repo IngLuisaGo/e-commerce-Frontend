@@ -52,8 +52,8 @@ export default class inicio extends React.Component {
                             alt="Stylo Lenanie"
                         />
                         <Carousel.Caption>
-                            <h3>Second slide label</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                            <h3>Stylo Lenanie</h3>
+                            <p>Dale un toque de originalidad con toda la variedad de nuestros diseños exclusivos para dama</p>
                         </Carousel.Caption>
                     </Carousel.Item>
                     <Carousel.Item>
@@ -63,9 +63,9 @@ export default class inicio extends React.Component {
                             alt="Stylo Lenanie"
                         />
                         <Carousel.Caption>
-                            <h3>Third slide label</h3>
+                            <h3>Stylo Lenanie</h3>
                             <p>
-                                Praesent commodo cursus magna, vel scelerisque nisl consectetur.
+                            Calzado exclusivo de marcas nacionales e importadas
                             </p>
                         </Carousel.Caption>
                     </Carousel.Item>
