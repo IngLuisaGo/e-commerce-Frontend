@@ -3,13 +3,10 @@ import Carousel from 'react-bootstrap/Carousel';
 import tienda1 from '../../assets/closet_clothes.jpg';
 import tienda2 from '../../assets/Tienda-2.jpg';
 import tienda3 from '../../assets/Tienda-3.jpg';
-import tienda4 from '../../assets/Tienda-4.jpg';
-import item1 from '../../assets/Items/Items-1.jpeg';
-import Card from 'react-bootstrap/Card';
 import './index.css';
-import Button from 'react-bootstrap/Button';
-import CardsR from '../cards/cards'
+import CardsR from '../cards/cards';
 import Row from 'react-bootstrap/Row';
+import Container from 'react-bootstrap/Container';
 
 const columns = [{
     dataField: '_id',
@@ -79,16 +76,19 @@ export default class inicio extends React.Component {
                 </div>
 
                 <div className='ms-5 me-5 mt-3'>
-                    <Row className='ms-5 me-5'>
-                        <CardsR
-                            url="/productos"
-                            columns={columns}
-                            showEditButton={true}
-                            showDeleteButton={true}
-                            onClickEditButton={this.onClickEditButton}
-                            onClickDeleteButton={this.onClickDeleteButton}
-                        />
-                    </Row>
+                    <Container>
+                        <Row className=' ms-5'>
+                            <CardsR
+                                url="/productos/public"
+                                columns={columns}
+                                showEditButton={true}
+                                showDeleteButton={true}
+                                onClickEditButton={this.onClickEditButton}
+                                onClickDeleteButton={this.onClickDeleteButton}
+                            />
+                        </Row>
+                    </Container>
+
                 </div>
             </div>
         );
