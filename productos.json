@@ -1,0 +1,86 @@
+[{
+  "_id": {
+    "$oid": "637ed9b14e58bdc52006012e"
+  },
+  "nombre": "producto 51 update",
+  "cantidad": 25,
+  "precio": 60000,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "637efe52c9957491bbc1e208"
+  },
+  "nombre": "Blusa puff jean",
+  "precio": 60000,
+  "cantidad": 10
+},{
+  "_id": {
+    "$oid": "637eff0ec9957491bbc1e20a"
+  },
+  "nombre": "Blusa dilay seda",
+  "precio": 40000,
+  "cantidad": 10
+},{
+  "_id": {
+    "$oid": "637eff39c9957491bbc1e20c"
+  },
+  "nombre": "Bluson con top",
+  "precio": 60000,
+  "cantidad": 10
+},{
+  "_id": {
+    "$oid": "637eff4bc9957491bbc1e20e"
+  },
+  "nombre": "Bolso Velez carriel dama",
+  "precio": 60000,
+  "cantidad": 10
+},{
+  "_id": {
+    "$oid": "637eff58c9957491bbc1e210"
+  },
+  "nombre": "Bolso Velez carriel caballero",
+  "precio": 70000,
+  "cantidad": 10
+},{
+  "_id": {
+    "$oid": "637eff66c9957491bbc1e212"
+  },
+  "nombre": "Blusa ojalete satin",
+  "precio": 50000,
+  "cantidad": 10
+},{
+  "_id": {
+    "$oid": "637eff73c9957491bbc1e214"
+  },
+  "nombre": "Blusa camisera",
+  "precio": 50000,
+  "cantidad": 10
+},{
+  "_id": {
+    "$oid": "637eff81c9957491bbc1e216"
+  },
+  "nombre": "Blusa silueta bicolor",
+  "precio": 45000,
+  "cantidad": 10
+},{
+  "_id": {
+    "$oid": "637eff8dc9957491bbc1e218"
+  },
+  "nombre": "Billeteras Velez reposición",
+  "precio": 100000,
+  "cantidad": 10
+},{
+  "_id": {
+    "$oid": "637eff9ac9957491bbc1e21a"
+  },
+  "nombre": "Billeteras Velez vz reposicion",
+  "precio": 100000,
+  "cantidad": 10
+},{
+  "_id": {
+    "$oid": "637effa8c9957491bbc1e21c"
+  },
+  "nombre": "Bragas lino flex",
+  "precio": 50000,
+  "cantidad": 10
+}]
