@@ -3,7 +3,7 @@ import { Navbar, Container, Nav, DropdownButton, Dropdown} from 'react-bootstrap
 import './navbar.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faRightFromBracket,faUser } from '@fortawesome/free-solid-svg-icons';
-import Cookies from 'universal-cookie/es6';
+import Cookies from 'universal-cookie';
 
 const cookies = new Cookies();
 

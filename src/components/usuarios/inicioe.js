@@ -1,11 +1,11 @@
 import React from 'react';
 import { Container, Nav, Row } from 'react-bootstrap';
-import ProductosBuscar from './crud/buscar';
-import ProductosCrear from './crud/crear';
-import ProductosEditar from './crud/editar';
-import "./productos.css";
+import UsuariosBuscar from './crud/buscar';
+import UsuariosCrear from './crud/crear';
+import UsuariosEditar from './crud/editar';
+import "./usuarios.css";
 
-export default class Productos extends React.Component {
+export default class Usuarios extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -13,31 +13,31 @@ export default class Productos extends React.Component {
       _id: null,
     };
     this.changeTab = this.changeTab.bind(this);
-    this.setIdProducto = this.setIdProducto.bind(this);
-    this.getIdProducto = this.getIdProducto.bind(this);
+    this.setIdUsuario = this.setIdUsuario.bind(this);
+    this.getIdUsuario = this.getIdUsuario.bind(this);
   }
 
   changeTab(tab) {
     this.setState({ currentTab: tab });
   }
 
-  setIdProducto(id) {
+  setIdUsuario(id) {
     this.setState({ _id: id });
   }
 
-  getIdProducto() {
+  getIdUsuario() {
     return this.state._id;
   }
 
   render() {
     return (
-      <Container id="producto-container" className="producto-container">
-        <Row className="producto-toolbar">
+      <Container id="usuario-container" className="usuario-container">
+        <Row className="usuario-toolbar">
           <Nav
             fill
             variant="tabs"
             defaultActiveKey="/buscar"
-            className="producto-tabs shadow-sm"
+            className="usuario-tabs shadow-sm"
             onSelect={(eventKey) => this.setState({ currentTab: eventKey })}
           >
             <Nav.Item>
@@ -49,18 +49,18 @@ export default class Productos extends React.Component {
           </Nav>
         </Row>
 
-        <Row className="producto-content">
+        <Row className="usuario-content">
           {this.state.currentTab === "buscar" ? (
-            <ProductosBuscar
+            <UsuariosBuscar
               changeTab={this.changeTab}
-              setIdProducto={this.setIdProducto}
+              setIdUsuario={this.setIdUsuario}
             />
           ) : this.state.currentTab === "crear" ? (
-            <ProductosCrear changeTab={this.changeTab} />
+            <UsuariosCrear changeTab={this.changeTab} />
           ) : (
-            <ProductosEditar
+            <UsuariosEditar
               changeTab={this.changeTab}
-              getIdProducto={this.getIdProducto}
+              getIdUsuario={this.getIdUsuario}
             />
           )}
         </Row>

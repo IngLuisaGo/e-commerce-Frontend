@@ -1,16 +1,16 @@
 /* Espaciado general y ancho máximo agradable */
-.producto-container {
+.usuario-container {
   margin-top: 120px;             /* era 150 */
   max-width: 1200px;
 }
 
 /* Barra superior con tabs */
-.producto-toolbar {
+.usuario-toolbar {
   margin-bottom: 16px;
 }
 
 /* Estilo de las tabs para que parezcan “píldoras” modernas */
-.producto-tabs {
+.usuario-tabs {
   border-radius: 12px;
   background: #ffffff;
   padding: 6px;
@@ -18,7 +18,7 @@
   width: 100%;
 }
 
-.producto-tabs .nav-link {
+.usuario-tabs .nav-link {
   border: none !important;
   color: #6c757d;
   font-weight: 600;
@@ -27,17 +27,17 @@
   transition: .15s ease-in-out;
 }
 
-.producto-tabs .nav-link:hover {
+.usuario-tabs .nav-link:hover {
   background: #f3f4f6;
 }
 
-.producto-tabs .nav-link.active {
+.usuario-tabs .nav-link.active {
   background: #5b54a4;           /* tono morado de tu header */
   color: #fff !important;
 }
 
 /* Contenedor del contenido (buscar/crear/editar) como “card” */
-.producto-content {
+.usuario-content {
   background: #fff;
   border-radius: 14px;
   padding: 20px 18px;
@@ -60,14 +60,14 @@
 }
 
 /* Márgenes de secciones internas */
-#productos-crear-container,
-#producto-buscar-container {
+#usuarios-crear-container,
+#usuarios-buscar-container {
   margin-top: 20px;              /* era 50 */
   width: 100%;                   /* era 90% */
 }
 
 /* Labels más consistentes en crear/editar */
-#productos-crear-container .form-label {
+#usuarios-crear-container .form-label {
   float: left;
   margin-bottom: 10px;
 }

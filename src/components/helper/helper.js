@@ -1,74 +1,63 @@
-import { isUndefined } from "util";
+//import { isUndefined } from "util";
 import axios from "axios";
-import Cookies from "universal-cookie/es6";
-import app from '../../app.json'
-
-
+import Cookies from "universal-cookie";
+import app from "../../app.json";
 
 const cookies = new Cookies();
 const { APIHOST } = app;
 
 export function calcularExpiracionSesion() {
-    const now = new Date().getTime();
-    const newDate = now + 60 * 30 * 1000;
-
-    return new Date(newDate);
+  const now = Date.now();
+  const newDate = now + 60 * 30 * 1000; // 30 min
+  return new Date(newDate);
 }
 
 export function getSesion() {
-    return isUndefined(cookies.get('_s')) ? false : cookies.get('_s');
+  // evitar util.isUndefined en frontend
+  const val = cookies.get("_s");
+  return typeof val === "undefined" ? false : val;
 }
 
 function renovarSesion() {
-    const sesion = getSesion();
-    if (!sesion) window.location.href = "/login";
+  const sesion = getSesion();
+  if (!sesion) {
+    window.location.href = "/login";
+    return null;
+  }
 
-    cookies.set("_s", sesion, {
-        path: "/",
-        expires: calcularExpiracionSesion(),
-    });
-    return sesion;
+  cookies.set("_s", sesion, {
+    path: "/",
+    expires: calcularExpiracionSesion(),
+  });
+  return sesion;
 }
 
-
 export const request = {
-    get: function (services) {
-        let token = renovarSesion();
-        return axios.get(`${APIHOST}${services}`,
-            {
-                headers: {
-                    Authorization: `Bearer ${token}`,
-                },
-            });
+  get(services) {
+    const token = renovarSesion();
+    return axios.get(`${APIHOST}${services}`, {
+      headers: { Authorization: `Bearer ${token}` },
+    });
+  },
 
-    },
+  post(services, data) {
+    const token = renovarSesion();
+    return axios.post(`${APIHOST}${services}`, data, {
+      headers: { Authorization: `Bearer ${token}` },
+    });
+  },
 
+  put(services, data) {
+    const token = renovarSesion();
+    return axios.put(`${APIHOST}${services}`, data, {
+      headers: { Authorization: `Bearer ${token}` },
+    });
+  },
 
-    post: function (services, data) {
-        let token = renovarSesion();
-        return axios.post(`${APIHOST}${services}`, data, {
-            headers: {
-                Authorization: `Bearer ${token}`,
-            },
-        });
-    },
-
-    put: function (services, data) {
-        let token = renovarSesion();
-        return axios.put(`${APIHOST}${services}`, data, {
-            headers: {
-                Authorization: `Bearer ${token}`,
-            },
-
-        });
-    },
-
-    delete:function(services){
-        let token = renovarSesion();
-        return axios.delete(`${APIHOST}${services}`,{
-            headers:{
-                Authorization: `Bearer ${token}`,
-            },
-        });
-    },
+  delete(services) {
+    const token = renovarSesion();
+    return axios.delete(`${APIHOST}${services}`, {
+      headers: { Authorization: `Bearer ${token}` },
+    });
+  },
 };
